@@ -1,0 +1,23 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+django = "==3.2.9"
+pillow = "*"
+django-debug-toolbar = "*"
+django-redis = "*"
+unidecode = "*"
+jinja2 = "*"
+psycopg2-binary = "*"
+django-environ = "*"
+djangorestframework = "*"
+django-ckeditor = "*"
+django-filter = "*"
+django-jinja = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.10"
