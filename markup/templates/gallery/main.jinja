@@ -1,0 +1,31 @@
+{% extends 'layout/base.jinja' %}
+
+{% block title %}Gallery{% endblock title %}
+
+{% block content %}
+<div class="container overflow-hidden">
+
+  {% for row in object_list | batch(3) -%}
+    <div class="row g-5">
+
+      {% for post in row %}
+      <div class="col">
+        <div class="card" style="width: 20rem;">
+            <a class="btn" data-bs-toggle="collapse" href="#collapse_{{ post.pk }}" role="button" aria-expanded="false" aria-controls="collapseExample">
+              <img class="card-img-top" src="{{ post.icon.image.url }}" alt="Card image cap">
+            </a>
+            <div class="collapse" id="collapse_{{ post.pk }}">
+              <div class="card card-body">
+                {{ post.title }}
+              </div>
+            </div>
+        </div>
+      </div>
+      {% endfor %}
+
+    </div>  
+  {% endfor %}
+
+</div>
+{% endblock content %}
+

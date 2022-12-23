@@ -144,3 +144,7 @@ app/static
 
 # makemigrations and migrate
 migrations/
+
+uploads/
+
+auto_create_posts.py

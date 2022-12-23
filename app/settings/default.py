@@ -34,6 +34,7 @@ FILE_CHARSET = 'utf-8'
 
 PROJECT_APPS = [
     'apps.user',
+    'apps.gallery',
 ]
 
 
@@ -182,7 +183,7 @@ STATICFILES_DIRS = [
     BASE_ROOT.parent / 'markup' / 'static'
 ]
 MEDIA_URL = '/uploads/'
-MEDIA_ROOT = BASE_ROOT / 'uploads'
+MEDIA_ROOT = BASE_ROOT.parent / 'uploads'
 
 LOCALE_PATHS = (
     BASE_ROOT / 'locale',
