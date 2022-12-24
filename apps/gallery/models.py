@@ -21,7 +21,7 @@ class Post(CreatedAtUpdatedAtByMixin, models.Model):
         null=True,
         verbose_name=_('Image alternative name')
     )
-    likes = models.IntegerField(
+    likes = models.PositiveIntegerField(
         default=0,
         verbose_name=_('Amount of likes')
     )
@@ -36,7 +36,7 @@ class Post(CreatedAtUpdatedAtByMixin, models.Model):
     
     
 
-class Image(CreatedAtUpdatedAtByMixin, models.Model):
+class Image(models.Model):
     image = models.ImageField(
         upload_to=get_upload_path,
         verbose_name=_('Image')

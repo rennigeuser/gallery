@@ -10,17 +10,17 @@ class CreatedAtUpdatedAtByMixin(models.Model):
         null=True,
         verbose_name=_('Author')
     )
-    created_at = models.DateField(
+    created_at = models.DateTimeField(
         auto_now_add=True,
         blank=True,
         null=True,
-        verbose_name=_('Дата создания'),
+        verbose_name=_('Creation date'),
     )
-    updated_at = models.DateField(
+    updated_at = models.DateTimeField(
         auto_now=True,
         blank=True,
         null=True,
-        verbose_name=_('Дата редактирования'),
+        verbose_name=_('Date of update'),
     )
 
     class Meta:
