@@ -1,11 +1,21 @@
-from django.views.generic import ListView
+from django.shortcuts import render
 from .models import Post
+from django.http import JsonResponse
 
 
-
-class PostListView(ListView):
-    queryset = Post.objects.all()
-    template_name = 'gallery/main.jinja'
+def main_page(request):
+    return render(request, 'gallery/main.jinja')
 
 
-post_list_view = PostListView.as_view()
+def get_posts(request):
+    posts = [
+        {
+        'title': post.title,
+        'author_email': post.author.email,
+        'icon_link': post.icon.image.url,
+        'alt': post.icon_alt,
+        'likes': post.likes,
+        'created_at': post.created_at,
+        } for post in Post.objects.all()]
+
+    return JsonResponse({'posts': posts})

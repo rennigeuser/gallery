@@ -35,6 +35,8 @@ FILE_CHARSET = 'utf-8'
 PROJECT_APPS = [
     'apps.user',
     'apps.gallery',
+
+    'api.gallery_api',
 ]
 
 
@@ -53,6 +55,8 @@ INSTALLED_APPS = PROJECT_APPS + [
 
     'ckeditor',
     'ckeditor_uploader',
+
+    'rest_framework',
 ]
 
 
@@ -211,3 +215,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 AUTH_USER_MODEL = 'user.CustomUser'
 
 
+
+REST_FRAMEWORK = {
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+    'PAGE_SIZE': 10
+}

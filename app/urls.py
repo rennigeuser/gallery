@@ -15,17 +15,18 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from django.conf.urls import url
 from django.conf import settings
 from django.contrib.staticfiles.urls import static
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+
+    path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
+    path('api/', include('api.urls')),
     path('', include('apps.gallery.urls')),
     path('user/', include('apps.user.urls')),
 ]
-
 
 if settings.DEBUG:
     import debug_toolbar

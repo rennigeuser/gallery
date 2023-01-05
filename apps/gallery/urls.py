@@ -4,5 +4,6 @@ from . import views
 app_name = 'gallery'
 
 urlpatterns = [
-    path('', views.PostListView.as_view() , name='start_page'),
+    path('', views.main_page , name='start_page'),
+    path('getPosts/', views.get_posts, name='get_posts'),
 ]
